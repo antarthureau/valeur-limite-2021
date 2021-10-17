@@ -42,8 +42,8 @@ else {
    Serial.println("Warning: no pulse from sensor");
    } 
   else{
-      Serial.print("distance to nearest object:");
-      Serial.println(distance);
+      Serial.print("distance to nearest object: ");
+      Serial.print(distance);
       Serial.println(" cm");
   }
 //__________________________________________________//
