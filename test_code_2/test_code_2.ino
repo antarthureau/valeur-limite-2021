@@ -6,8 +6,8 @@ const unsigned int TRIG_PIN=13;
 const unsigned int ECHO_PIN=12;
 const unsigned int BAUD_RATE=9600;
 int relayCtrlPin = 8;
-int dt = 50; //latence en ms
-int dtco2 = 50; //duree loop co2
+int dt = 10; //latence en ms
+int dtco2 = 10; //duree loop co2
 unsigned long getDataTimer = 0;
 int j;
 
@@ -44,7 +44,6 @@ void loop() {
 //__________________________________________________//
 
 
-
 //relay logic_______________________________________//
 if (distance <= maxDist && distance >+ minDist) {
   digitalWrite(relayCtrlPin, HIGH);
@@ -53,10 +52,11 @@ if (distance <= maxDist && distance >+ minDist) {
 else {
   digitalWrite(relayCtrlPin, LOW);
 }
+
 //__________________________________________________//
 
 
-
+/*
 //ultrasonic data serialprint_______________________//
  if(duration==0){
   Serial.println("DISTANCE----------------------");
@@ -73,6 +73,7 @@ else {
       Serial.println("");
   }
 //__________________________________________________//
+*/
 
 
 
