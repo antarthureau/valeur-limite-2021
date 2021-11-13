@@ -1,8 +1,12 @@
 const unsigned int TRIG_PIN=13;
 const unsigned int ECHO_PIN=12;
 const unsigned int BAUD_RATE=9600;
-int relayCtrlPin = 8;
+int relayOne = 5;
+int relayTwo = 6;
+int relayThr = 7;
+int relayFou = 8;
 int dt = 50; //latence en ms
+int dt2 = 2000;
 unsigned long getDataTimer = 0;
 
 
@@ -18,7 +22,10 @@ int vibDuration = 5000; //duree de vibration en ms
 void setup() {    
   pinMode(TRIG_PIN, OUTPUT);
   pinMode(ECHO_PIN, INPUT);
-  pinMode(relayCtrlPin, OUTPUT);
+  pinMode(relayOne, OUTPUT);
+  pinMode(relayTwo, OUTPUT);
+  pinMode(relayThr, OUTPUT);
+  pinMode(relayFou, OUTPUT);
   Serial.begin(BAUD_RATE);
 }
 
@@ -37,11 +44,21 @@ void loop() {
 
 //relay logic_______________________________________//
 if (distance <= maxDist && distance >+ minDist) {
-  digitalWrite(relayCtrlPin, HIGH);
+  digitalWrite(relayOne, HIGH);
+  delay(dt2);
+  digitalWrite(relayTwo, HIGH);
+  delay(dt2);  
+  digitalWrite(relayThr, HIGH);
+  delay(dt2);
+  digitalWrite(relayFou, HIGH);
+  delay(dt2);
   delay(vibDuration);
 }
 else {
-  digitalWrite(relayCtrlPin, LOW);
+  digitalWrite(relayOne, LOW);
+  digitalWrite(relayTwo, LOW);  
+  digitalWrite(relayThr, LOW);
+  digitalWrite(relayFou, LOW);
 }
 //__________________________________________________//
 
