@@ -57,9 +57,9 @@ int readCO2UART(){
   // checksum
   byte check = getCheckSum(response);
   if (response[8] != check) {
-    Serial.println("Checksum not OK!");
-    Serial.print("Received: ");
-    Serial.println(response[8]);
+Serial.println("Checksum not OK!");
+Serial.print("Received: ");
+Serial.println(response[8]);
     Serial.print("Should be: ");
     Serial.println(check);
   }
