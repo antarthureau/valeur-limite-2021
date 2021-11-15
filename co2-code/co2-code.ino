@@ -1,13 +1,12 @@
+#include <MHZ19.h>
 #include <SoftwareSerial.h>
-SoftwareSerial co2Serial(6, 7); // define MH-Z19 RX TX
+SoftwareSerial co2Serial(7, 6); // define MH-Z19 RX TX
 unsigned long startTime = millis();
+
 int co2SensorPin=9;
 const unsigned int BAUD_RATE=9600;
-int dt = 10; //latence en ms
-int dtco2 = 10; //duree loop co2
 unsigned long getDataTimer = 0;
-
-
+int dt=50;
 
 void setup() {
     
@@ -17,14 +16,16 @@ void setup() {
 }
 
 void loop() {
+
+
 //CO2 sensor data serialprint_______________________//
 Serial.println("CO2---------------------------");
   Serial.print("Time from start: ");
-  Serial.print((millis() - startTime) / dtco2);
+  Serial.print((millis() - startTime) / 1000);
   Serial.println(" s");
   int ppm_uart = readCO2UART();
   int ppm_pwm = readCO2PWM();
-  delay(dtco2);
+  delay(5000);
 }
 
 int readCO2UART(){
@@ -41,7 +42,7 @@ int readCO2UART(){
 //    Serial.print("Waiting for response ");
 //    Serial.print(i);
 //    Serial.println(" s");
-    delay(dtco2);
+    delay(1000);
     i++;
   }
   if (co2Serial.available() > 0) {
@@ -57,9 +58,9 @@ int readCO2UART(){
   // checksum
   byte check = getCheckSum(response);
   if (response[8] != check) {
-Serial.println("Checksum not OK!");
-Serial.print("Received: ");
-Serial.println(response[8]);
+    Serial.println("Checksum not OK!");
+    Serial.print("Received: ");
+    Serial.println(response[8]);
     Serial.print("Should be: ");
     Serial.println(check);
   }
@@ -109,5 +110,9 @@ int readCO2PWM() {
   Serial.println("");
   return ppm_pwm;  
 //__________________________________________________//
-delay(dt); 
+
+
+ delay(dt);
+delay(dt);
+ 
  }
