@@ -32,7 +32,7 @@ ___
 
 As the display is quite small, it can be handy to enable remote control via SSH
 
-Open a terminal window and type "hostname -I" to fetch the IP adress of the Raspberry Pi, note the 2 adresses down
+Open a terminal window and type "hostname -I" to fetch the IP adress of the Raspberry Pi, note the IP adress
 
 Type "sudo systemctl enable ssh"
 
