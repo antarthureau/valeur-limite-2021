@@ -38,9 +38,9 @@ Type "sudo systemctl enable ssh"
 
 Type "sudo systemctl start ssh"
 
-Open a terminal window on another computer and type "sudo 10.113.10.207 -l pi" (replace the IP adress by the one of the Raspberry Pi)
+Open a terminal window on another computer and type "ssh 10.113.10.207 -l pi" (replace the IP adress by the one of the Raspberry Pi)
 
-The terminal should ask if you wish to connect to the Pi and ask for the Pi's password, once these steps are passed
+The terminal should ask if you wish to connect to the Pi and ask for the Pi's password
 
 Your terminal should display "pi@raspberrypi:~ $", you can then use the command line to control the Raspberry Pi
 
