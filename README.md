@@ -2,7 +2,9 @@
 
 ## RPi setup:
 
-The disk image for the Raspberry Pi can be found in the directory "img"
+The disk image for the Raspberry Pi can be found there
+
+https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2020-08-24/
 
 ___
 ## 4DPI-32 setup:
