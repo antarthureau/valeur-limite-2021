@@ -6,7 +6,7 @@ int relayTwo = 6;
 int relayThr = 7;
 int relayFou = 8;
 int dt = 50; //latence en ms
-int dt2 = 2000;
+int dt2 = 50; //delay entre depart relays pour eviter pic de courant
 unsigned long getDataTimer = 0;
 
 
@@ -14,7 +14,7 @@ unsigned long getDataTimer = 0;
 //variables a changer__________________________//
 int maxDist = 50; //distance maximum en cm
 int minDist = 7;  //distance minimum en cm
-int vibDuration = 5000; //duree de vibration en ms
+int vibDuration = 20000; //duree de vibration en ms
 //__________________________________________________//
 
 
